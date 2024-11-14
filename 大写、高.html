@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载按钮示例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('背景图片.png'); /* 替换为你的背景图片的真实URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #downloadButton {
+            position: absolute;
+            top: 800px;  /* 设定为要求的 y 位置 */
+            left: 800px; /* 设定为要求的 x 位置 */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(112, 48, 160);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #downloadButton:hover {
+            width:120px;
+            height:50px;
+            background-color: rgb(92, 28, 140);
+        }
+        #dialog {
+            display: none; /* 初始时隐藏弹出框 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        #dialogMessage {
+            color: black;
+            margin-bottom: 20px;
+        }
+        #returnButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(112, 48, 160);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #returnButton:hover {
+            background-color: rgb(92, 28, 140);
+        }
+    </style>
+</head>
+<body>
+    <button id="downloadButton">点击下载</button>
+
+    <div id="dialog">
+        <p id="dialogMessage">恭喜你，下载完成，请返回继续填写问卷！</p>
+        <button id="returnButton">返回</button>
+    </div>
+
+    <script>
+        const downloadButton = document.getElementById('downloadButton');
+        const dialog = document.getElementById('dialog');
+        const returnButton = document.getElementById('returnButton');
+
+        downloadButton.addEventListener('click', () => {
+            dialog.style.display = 'block';
+        });
+
+        returnButton.addEventListener('click', () => {
+            dialog.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
